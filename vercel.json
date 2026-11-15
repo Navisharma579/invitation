@@ -1,6 +1,23 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/rajasthani/index.html" }
+    { "source": "/rajasthani", "destination": "/index.html" },
+    { "source": "/rajasthani/index.html", "destination": "/index.html" },
+    { "source": "/rajasthani/:match*", "destination": "/:match*" }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Accept-Ranges", "value": "bytes" },
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    }
   ]
 }

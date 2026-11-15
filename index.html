@@ -1,19 +1,471 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="hi" data-theme="gold">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=rajasthani/index.html">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rishi & Manisha · Royal Rajasthani Wedding Invitation</title>
-  <script>
-    window.location.replace("rajasthani/index.html" + window.location.search + window.location.hash);
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Rishi & Manisha · Shubh Vivah</title>
+  <meta name="description" content="ऋषि एवं मनीषा का शुभविवाह · सोमवार, 14 दिसंबर 2026 · जयपुर">
+  <meta name="theme-color" content="#FAF4EB">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700;800&family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=royal_v3">
 </head>
-<body style="margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; background:#FFF9E9; font-family:sans-serif; text-align:center; padding:20px;">
-  <div>
-    <h2 style="color:#741F2B; margin:0 0 10px;">॥ श्री गणेशाय नमः ॥</h2>
-    <p style="color:#B18A45; margin:0 0 15px;">Opening Royal Rajasthani Wedding Invitation...</p>
-    <p><a href="rajasthani/index.html" style="color:#741F2B; text-decoration:underline; font-weight:bold;">Click here if not redirected automatically</a></p>
+<body class="is-locked">
+
+  <!-- ============ ROYAL RAJASTHANI WELCOME EXPERIENCE ============ -->
+  <div id="intro" class="intro" aria-label="Royal Rajasthani Wedding Invitation">
+    <div class="intro-backdrop"></div>
+    <div class="intro-vignette"></div>
+    <div class="intro-glow"></div>
+
+    <header class="intro-header">
+      <div class="intro-kalash-badge" aria-hidden="true">
+        <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="#C5A059" opacity=".25"/><path d="M20 6 q-3 6 0 10 q3-5 0-10" fill="#2E7A4E"/><ellipse cx="20" cy="26" rx="10" ry="9" fill="#D4AF37" stroke="#741F2B" stroke-width="1.2"/><rect x="14" y="15" width="12" height="3" rx="1" fill="#B18A45"/><circle cx="20" cy="26" r="2.4" fill="#9F2638"/></svg>
+      </div>
+      <p class="intro-mantra tiro">॥ श्री गणेशाय नमः ॥</p>
+      <div class="intro-header-divider"><span></span><b>❖</b><span></span></div>
+      <p class="intro-subhead deva">श्री कल्याण राय जी महाराज की कृपा से</p>
+    </header>
+
+    <!-- Royal Rajasthani Envelope Box -->
+    <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Tap to open royal wedding invitation">
+      <!-- 4 Ornate Gold Corner Accents -->
+      <span class="env-corner env-corner--tl"></span>
+      <span class="env-corner env-corner--tr"></span>
+      <span class="env-corner env-corner--bl"></span>
+      <span class="env-corner env-corner--br"></span>
+
+      <!-- Inner Back Liner (Silk Velvet Lining with Gold Jaali) -->
+      <div class="env-back">
+        <div class="env-liner"></div>
+      </div>
+
+      <!-- The Royal Gold-Framed Letter Card (hidden inside pocket, glides up majestically on open) -->
+      <div class="env-letter" id="envLetter">
+        <div class="letter-card">
+          <div class="letter-border">
+            <span class="lc-corner lc-tl"></span>
+            <span class="lc-corner lc-tr"></span>
+            <span class="lc-corner lc-bl"></span>
+            <span class="lc-corner lc-br"></span>
+            <p class="letter-mantra deva">॥ ॐ श्री गणेशाय नमः ॥</p>
+            <h3 class="letter-shubh tiro">॥ शुभविवाह ॥</h3>
+            <div class="letter-monogram"><span>R</span><i>&amp;</i><span>M</span></div>
+            <h2 class="letter-couple">RISHI <em>&amp;</em> MANISHA</h2>
+            <div class="letter-divider"><span></span><b>❖</b><span></span></div>
+            <p class="letter-date deva">सोमवार, 14 दिसंबर, 2026</p>
+            <p class="letter-loc">जयपुर, राजस्थान</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Envelope Front Pocket (Solid Rich Parchment with Gold Foil Embossing) -->
+      <div class="env-pocket">
+        <div class="pocket-content">
+          <p class="pocket-shubh tiro">॥ शुभविवाह ॥</p>
+          <h3 class="pocket-couple tiro">ऋषि <em>संग</em> मनीषा</h3>
+          <div class="pocket-divider"><span></span><b>❖</b><span></span></div>
+          <p class="pocket-auspicious deva">सोमवार, 14 दिसंबर 2026 · जयपुर</p>
+        </div>
+      </div>
+
+      <!-- The Royal Scalloped Arch Flap -->
+      <div class="env-flap" id="envFlap">
+        <div class="flap-body">
+          <div class="flap-gold-trim"></div>
+          <div class="flap-motif">❖</div>
+        </div>
+      </div>
+
+      <!-- 3D Royal Lac Wax Seal (शाही मुहर) -->
+      <button class="env-seal" id="seal" aria-label="Open wedding invitation with Royal Wax Seal" title="Click to break seal & open invitation">
+        <div class="seal-glow"></div>
+        <div class="seal-ring"></div>
+        <div class="seal-stamp">
+          <span class="seal-crown">👑</span>
+          <span class="seal-text">R&amp;M</span>
+          <span class="seal-sub">✦ ✦ ✦</span>
+        </div>
+      </button>
+    </div>
+
+    <!-- Grand Call To Action -->
+    <div class="intro-actions">
+      <button class="btn btn--royal intro-btn" id="openBtn">
+        <span class="btn-shimmer"></span>
+        <span class="btn-gem">✦</span>
+        <span class="btn-label">OPEN WEDDING INVITATION</span>
+        <span class="btn-gem">✦</span>
+      </button>
+      <p class="intro-hint">🌸 स्पर्श करें · Tap Seal or Button to Open with Royal Music 🌸</p>
+    </div>
   </div>
+
+  <!-- ============ TOP CONTROLS: THEME ============ -->
+  <div class="top-controls" id="topControls">
+    <button class="theme-pill" id="themeToggle" aria-label="Toggle theme: Gold / Ruby" title="Switch Theme">
+      <span class="pill-dot" id="themeDot"></span>
+      <span id="themeText">✨ शाही स्वर्ण</span>
+    </button>
+  </div>
+
+  <!-- ============ FLOATING MUSIC PLAYER ============ -->
+  <div class="music" id="music" hidden>
+    <button class="music-disc" id="playBtn" aria-label="Play music" title="Play / Pause">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#3C2A21" stroke="#C5A059" stroke-width="2"/><circle cx="24" cy="24" r="15" fill="none" stroke="#C5A059" stroke-width=".8" stroke-dasharray="2 3"/><circle cx="24" cy="24" r="6" fill="#C5A059"/></svg>
+      <span class="music-state" id="playIcon">▶</span>
+    </button>
+    <div class="music-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <button class="music-mute" id="muteBtn" aria-label="Mute" title="Mute / Unmute">🔊</button>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section id="hero" class="screen hero">
+      <div class="screen-bg hero-bg" id="heroBg">
+        <video class="screen-video" autoplay muted loop playsinline preload="auto">
+          <source media="(orientation: portrait)" src="assets/hero-portrait.mp4" type="video/mp4">
+          <source media="(orientation: landscape)" src="assets/hero-landscape.mp4" type="video/mp4">
+          <source src="assets/hero.mp4" type="video/mp4">
+        </video>
+        <picture class="screen-pic">
+          <source media="(orientation: portrait)" srcset="assets/hero-portrait.jpg">
+          <source media="(orientation: landscape)" srcset="assets/hero-landscape.jpg">
+          <img src="assets/hero-landscape.jpg" alt="Jaipur palace at golden hour seen through a carved jharokha arch" loading="eager">
+        </picture>
+      </div>
+      <div class="hero-content">
+        <p class="h-script">Save the Date</p>
+        <p class="h-line deva hero-mantra">|| ॐ श्री गणेशाय नमः ||</p>
+        <div class="h-line monogram"><span>R</span><i>&amp;</i><span>M</span></div>
+        <h1 class="h-line hero-names">RISHI <em>&amp;</em> MANISHA</h1>
+        <p class="hero-subtitle">ARE GETTING MARRIED</p>
+        <div class="h-line divider"><span></span><b>❖</b><span></span></div>
+        <p class="h-line deva hero-date">सोमवार, 14 दिसंबर, 2026</p>
+      </div>
+      <img class="feather feather--l" id="featherL" src="assets/peacock-feather.svg" alt="" aria-hidden="true">
+      <img class="feather feather--r" id="featherR" src="assets/peacock-feather.svg" alt="" aria-hidden="true">
+      <a href="#ganesh" class="scroll-ind" aria-label="Scroll down"><span></span>Scroll</a>
+    </section>
+
+    <!-- ============ GANESHA ============ -->
+    <section id="ganesh" class="screen ganesh">
+      <div class="screen-bg">
+        <video class="screen-video" autoplay muted loop playsinline preload="metadata">
+          <source media="(orientation: portrait)" src="assets/ganesh-portrait.mp4" type="video/mp4">
+          <source media="(orientation: landscape)" src="assets/ganesh-landscape.mp4" type="video/mp4">
+          <source src="assets/ganesh.mp4" type="video/mp4">
+        </video>
+        <picture class="screen-pic">
+          <source media="(orientation: portrait)" srcset="assets/ganesh-portrait.jpg">
+          <source media="(orientation: landscape)" srcset="assets/ganesh-landscape.jpg">
+          <img src="assets/ganesh-landscape.jpg" alt="Devotional ivory temple background with diyas" loading="lazy">
+        </picture>
+      </div>
+      <div class="ganesh-content">
+        <p class="ganesh-kuldevi deva reveal">|| जय जमवाय माता || &nbsp;❖&nbsp; || श्री हनुमन्ते नमः || &nbsp;❖&nbsp; || श्री भैरूजी महाराज ||</p>
+        <h2 class="tiro ganesh-title reveal">|| श्री गणेशाय नमः ||</h2>
+        <img class="ganesha reveal" src="assets/ganesha.webp" alt="Lord Ganesha illustration in black and antique gold">
+        <p class="shloka deva reveal">विघ्न हरण मंगल करण, गणनायक गणराज।<br>प्रथम निमंत्रण आपको, सकल सुधारो काज॥</p>
+        <p class="shloka deva reveal" style="font-size:0.95rem; opacity:0.85; margin-top:6px;">ॐ वक्रतुण्ड महाकाय, सूर्य कोटि समप्रभः। निर्विघ्नं कुरु मे देव, सर्व कार्येषु सर्वदा॥</p>
+        <div class="interactive-diya-row reveal" style="display:flex; justify-content:center; gap:24px; margin-top:18px;">
+          <button class="interactive-diya" title="Click to light sacred diya / दीप प्रज्ज्वलित करें" aria-label="Light holy lamp">
+            <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="#D8B26E" opacity=".2"/><path class="flame" d="M20 5 q-4 8 0 14 q4-6 0-14z" fill="#FFA500"/><path d="M10 24 q10 8 20 0 q-4 8-10 8 t-10-8z" fill="#C5A059" stroke="#7A5A2A"/><ellipse cx="20" cy="24" rx="10" ry="3" fill="#FFE6A8"/></svg>
+          </button>
+          <button class="interactive-diya" title="Click to light sacred diya / दीप प्रज्ज्वलित करें" aria-label="Light holy lamp">
+            <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="#D8B26E" opacity=".2"/><path class="flame" d="M20 5 q-4 8 0 14 q4-6 0-14z" fill="#FFA500"/><path d="M10 24 q10 8 20 0 q-4 8-10 8 t-10-8z" fill="#C5A059" stroke="#7A5A2A"/><ellipse cx="20" cy="24" rx="10" ry="3" fill="#FFE6A8"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INVITATION CARD ============ -->
+    <section id="invite" class="screen invite">
+      <div class="screen-bg">
+        <video class="screen-video" autoplay muted loop playsinline preload="metadata">
+          <source media="(orientation: portrait)" src="assets/invite-portrait.mp4" type="video/mp4">
+          <source media="(orientation: landscape)" src="assets/invite-landscape.mp4" type="video/mp4">
+          <source src="assets/invite.mp4" type="video/mp4">
+        </video>
+        <picture class="screen-pic">
+          <source media="(orientation: portrait)" srcset="assets/invite-portrait.jpg">
+          <source media="(orientation: landscape)" srcset="assets/invite-landscape.jpg">
+          <img src="assets/invite-landscape.jpg" alt="Deep royal gold velvet background with fine gold embroidery" loading="lazy">
+        </picture>
+      </div>
+      <article class="card reveal" id="inviteCard">
+        <span class="corner c-tl"></span><span class="corner c-tr"></span><span class="corner c-bl"></span><span class="corner c-br"></span>
+        <div class="card-inner deva">
+          <div class="card-kalash" aria-hidden="true">
+            <svg viewBox="0 0 60 60"><path d="M30 6 q-6 8 0 14 q6-6 0-14z M22 10 q-2 8 6 10 M38 10 q2 8-6 10" fill="#B5592E"/><ellipse cx="30" cy="40" rx="16" ry="14" fill="#C5A15D" stroke="#3C2A21"/><rect x="22" y="22" width="16" height="6" rx="2" fill="#B18A45"/><path d="M22 40 h16" stroke="#3C2A21"/><circle cx="30" cy="40" r="3" fill="#8E2838"/></svg>
+          </div>
+          <p class="c-sm">परमपिता परमेश्वर की असीम अनुकम्पा से</p>
+          <p class="c-strong">श्रीमती विद्या देवी एवं स्व. पं. श्री मुन्नालाल मिश्र</p>
+          <p class="c-sm">अपने सुपौत्र</p>
+          <p class="c-name tiro">आयुष्मान ऋषि</p>
+          <p class="c-par">(सुपुत्र श्रीमती ममता देवी एवं पं. श्री राजेन्द्र कुमार मिश्र)</p>
+          <p class="c-sm">निवासी - जयपुर</p>
+          <p class="c-sang tiro"><span></span>संग<span></span></p>
+          <p class="c-name tiro">आयुष्मती मनीषा</p>
+          <p class="c-par">(सुपौत्री श्रीमती गीता देवी एवं स्व. श्री भोलाराम शर्मा)</p>
+          <p class="c-par">(सुपुत्री श्रीमती संगीता देवी एवं श्री रामचरण शर्मा)</p>
+          <p class="c-sm">निवासी - शिवाजी नगर (जयपुर)</p>
+          <p class="c-sm">के</p>
+          <p class="c-band tiro">|| मंगल परिणय-सूत्र-बन्धन ||</p>
+          <p class="c-body">की मधुर बेला पर वर-वधू को स्नेहिल आशीर्वाद प्रदान करने हेतु आपको सादर आमंत्रित करते हैं।</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ BRIDE & GROOM ============ -->
+    <section id="couple" class="screen couple">
+      <div class="screen-bg">
+        <video class="screen-video" autoplay muted loop playsinline preload="metadata">
+          <source media="(orientation: portrait)" src="assets/couple-portrait.mp4" type="video/mp4">
+          <source media="(orientation: landscape)" src="assets/couple-landscape.mp4" type="video/mp4">
+          <source src="assets/couple.mp4" type="video/mp4">
+        </video>
+        <picture class="screen-pic">
+          <source media="(orientation: portrait)" srcset="assets/couple-portrait.jpg">
+          <source media="(orientation: landscape)" srcset="assets/couple-landscape.jpg">
+          <img src="assets/couple-landscape.jpg" alt="Interior of royal Rajasthani palace hall" loading="lazy">
+        </picture>
+      </div>
+      <div class="couple-wrap">
+        <header class="sec-head sec-head--light reveal">
+          <p class="eyebrow-script">Celebrating the Moments</p>
+          <h2 class="meet-title">OUR MOMENTS</h2>
+          <div class="divider"><span></span><b>❖</b><span></span></div>
+          <p class="deva sub">॥ वर · वधू परिचय ॥</p>
+        </header>
+        <div class="couple-grid">
+          <figure class="person person--groom reveal">
+            <div class="person-frame">
+              <video class="person-video" autoplay muted loop playsinline preload="metadata">
+                <source src="assets/groom.mp4" type="video/mp4">
+              </video>
+              <img src="assets/groom.webp" alt="Portrait of the groom Rishi in a royal Rajasthani safa and sherwani">
+            </div>
+            <figcaption>
+              <span class="role">THE GROOM · वर</span>
+              <h3 class="tiro">आयुष्मान ऋषि</h3>
+              <p class="card-quote">"In her warmth and grace, I found my lifelong home."</p>
+              <div class="card-p-divider"><span></span><b>❖</b><span></span></div>
+              <p class="deva parents">सुपुत्र श्रीमती ममता देवी एवं<br>पं. श्री राजेन्द्र कुमार मिश्र</p>
+              <p class="loc">📍 <span class="deva">जयपुर</span></p>
+            </figcaption>
+          </figure>
+          <div class="couple-mono reveal" aria-hidden="true">
+            <div class="monogram monogram--ring"><span>R</span><i>&amp;</i><span>M</span></div>
+          </div>
+          <figure class="person person--bride reveal">
+            <div class="person-frame">
+              <video class="person-video" autoplay muted loop playsinline preload="metadata">
+                <source src="assets/bride.mp4" type="video/mp4">
+              </video>
+              <img src="assets/bride.webp" alt="Portrait of the bride Manisha in a red Rajasthani odhni and bridal jewellery">
+            </div>
+            <figcaption>
+              <span class="role">THE BRIDE · वधू</span>
+              <h3 class="tiro">आयुष्मती मनीषा</h3>
+              <p class="card-quote">"In his gentle presence, I found my forever anchor."</p>
+              <div class="card-p-divider"><span></span><b>❖</b><span></span></div>
+              <p class="deva parents">सुपुत्री श्रीमती गीता देवी एवं स्व. श्री भोलाराम शर्मा<br>श्रीमती संगीता देवी एवं श्री रामचरण शर्मा</p>
+              <p class="loc">📍 <span class="deva">शिवाजी नगर, जयपुर</span></p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COUNTDOWN ============ -->
+    <section id="countdown" class="screen countdown">
+      <div class="screen-bg">
+        <video class="screen-video" autoplay muted loop playsinline preload="metadata">
+          <source media="(orientation: portrait)" src="assets/countdown-portrait.mp4" type="video/mp4">
+          <source media="(orientation: landscape)" src="assets/countdown-landscape.mp4" type="video/mp4">
+          <source src="assets/countdown.mp4" type="video/mp4">
+        </video>
+        <picture class="screen-pic">
+          <source media="(orientation: portrait)" srcset="assets/countdown-portrait.jpg">
+          <source media="(orientation: landscape)" srcset="assets/countdown-landscape.jpg">
+          <img src="assets/countdown-landscape.jpg" alt="Jaipur skyline at sunset with pink sandstone palace" loading="lazy">
+        </picture>
+      </div>
+      <div class="cd-wrap">
+        <header class="sec-head reveal">
+          <p class="eyebrow-script">Counting the days</p>
+          <h2 class="cd-title">COUNT DOWN</h2>
+          <div class="divider"><span></span><b>❖</b><span></span></div>
+          <p class="deva sub">सोमवार, 14 दिसंबर 2026</p>
+        </header>
+        <div class="cd-grid reveal" id="cd" role="timer" aria-live="off">
+          <div class="cd-tile"><b id="cdD">00</b><span>Days<i class="deva">दिन</i></span></div>
+          <div class="cd-tile"><b id="cdH">00</b><span>Hours<i class="deva">घंटे</i></span></div>
+          <div class="cd-tile"><b id="cdM">00</b><span>Minutes<i class="deva">मिनट</i></span></div>
+          <div class="cd-tile"><b id="cdS">00</b><span>Seconds<i class="deva">सेकंड</i></span></div>
+        </div>
+        <p class="cd-done deva" id="cdDone" hidden>शुभ घड़ी आ गई! · The auspicious day is here</p>
+      </div>
+    </section>
+
+    <!-- ============ EVENTS ============ -->
+    <section id="events" class="events">
+      <header class="sec-head reveal">
+        <p class="eyebrow-script">Wedding Festivities</p>
+        <h2>THE ROYAL CELEBRATIONS</h2>
+        <div class="divider"><span></span><b>❖</b><span></span></div>
+        <p class="deva sub">॥ मांगलिक कार्यक्रम ॥</p>
+      </header>
+      <div class="events-grid" id="timeline"></div>
+    </section>
+
+    <!-- ============ VENUE ============ -->
+    <section id="venue" class="screen venue">
+      <div class="screen-bg">
+        <video class="screen-video" autoplay muted loop playsinline preload="metadata">
+          <source media="(orientation: portrait)" src="assets/venue-portrait.mp4" type="video/mp4">
+          <source media="(orientation: landscape)" src="assets/venue-landscape.mp4" type="video/mp4">
+          <source src="assets/venue.mp4" type="video/mp4">
+        </video>
+        <picture class="screen-pic">
+          <source media="(orientation: portrait)" srcset="assets/venue-portrait.jpg">
+          <source media="(orientation: landscape)" srcset="assets/venue-landscape.jpg">
+          <img src="assets/venue-landscape.jpg" alt="Wedding garden at night with a decorated mandap" loading="lazy">
+        </picture>
+      </div>
+      <div class="venue-wrap">
+        <article class="venue-card reveal">
+          <p class="eyebrow-script">Our Venue</p>
+          <h2 class="tiro venue-name">ॐ राधिका मैरिज गार्डन</h2>
+          <p class="deva venue-addr"><span class="pin">📍</span> मार्बल मंडी चौराहा, कालवाड़ रोड, जयपुर।</p>
+          <div class="map">
+            <iframe title="Map: Om Radhika Marriage Garden, Kalwar Road, Jaipur" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=Om%20Radhika%20Marriage%20Garden%2C%20Marble%20Mandi%20Chauraha%2C%20Kalwar%20Road%2C%20Jaipur&z=15&output=embed"></iframe>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn--maroon" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Om%20Radhika%20Marriage%20Garden%2C%20Marble%20Mandi%20Chauraha%2C%20Kalwar%20Road%2C%20Jaipur">Get Directions</a>
+            <a class="btn btn--line" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Om%20Radhika%20Marriage%20Garden%2C%20Kalwar%20Road%2C%20Jaipur">Open in Maps</a>
+          </div>
+        </article>
+        <article class="venue-card venue-card--sm reveal">
+          <div class="baraat-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><ellipse cx="32" cy="20" rx="20" ry="7" fill="#C5A15D" stroke="#741F2B" stroke-width="1.5"/><path d="M12 20 v22 c0 4 9 7 20 7 s20-3 20-7 V20" fill="#9F2638" stroke="#741F2B" stroke-width="1.5"/><path d="M12 24 L52 40 M52 24 L12 40" stroke="#E8D5A7" stroke-width="2"/><path d="M8 8 l12 10 M56 8 l-12 10" stroke="#282018" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <p class="eyebrow-script">Baraat Departure</p>
+          <h3 class="tiro">श्री बालाजी बाग मैरिज गार्डन</h3>
+          <p class="deva venue-addr">नृसिंह विहार, डी.जी. फार्म के पास।</p>
+          <p class="baraat-time"><b>14 December 2026 · 3:00 PM</b><br><span class="deva">बारात निकासी (निवास स्थान से)</span></p>
+          <a class="btn btn--line" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Shri%20Balaji%20Bagh%20Marriage%20Garden%2C%20Nrisingh%20Vihar%2C%20Jaipur">Get Directions</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ FAMILY ============ -->
+    <section id="family" class="family">
+      <header class="sec-head reveal">
+        <p class="eyebrow-script">With the blessings of</p>
+        <h2>OUR FAMILIES</h2>
+        <div class="divider"><span></span><b>❖</b><span></span></div>
+        <p class="deva sub">॥ समस्त परिवारजन ॥</p>
+      </header>
+      <div class="family-grid" id="familyGrid"></div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="contact">
+      <header class="sec-head reveal">
+        <p class="eyebrow-script">Hosted with love</p>
+        <h2>WITH LOVE AND BLESSINGS</h2>
+        <div class="divider"><span></span><b>❖</b><span></span></div>
+      </header>
+      <div class="contact-grid">
+        <article class="gcard reveal">
+          <h3 class="tiro">प्रेषक</h3>
+          <ul class="deva names">
+            <li>पं. बाबूलाल मिश्र</li>
+            <li>पं. राजेन्द्र कुमार मिश्र</li>
+            <li>पं. विष्णु मिश्र</li>
+          </ul>
+          <p class="deva addr">प्लॉट नं. 62, संजय नगर, निवारू रोड, झोटवाड़ा, जयपुर।</p>
+          <div class="phones">
+            <div class="phone"><span>94603 85222</span><a class="chip" href="tel:+919460385222">📞 Call</a><a class="chip chip--wa" target="_blank" rel="noopener" href="https://wa.me/919460385222">WhatsApp</a></div>
+            <div class="phone"><span>77429 07042</span><a class="chip" href="tel:+917742907042">📞 Call</a><a class="chip chip--wa" target="_blank" rel="noopener" href="https://wa.me/917742907042">WhatsApp</a></div>
+          </div>
+        </article>
+        <article class="gcard reveal">
+          <h3 class="tiro">प्रतिष्ठान</h3>
+          <div class="biz">
+            <p class="deva biz-name">मुन्नालाल राजेन्द्र कुमार मिश्र</p>
+            <p class="deva addr">2115, खजानें वालों का रास्ता, जयपुर।</p>
+          </div>
+          <div class="biz">
+            <p class="deva biz-name">विनायक इलेक्ट्रिकल्स</p>
+            <div class="phone"><span>82091 99864</span><a class="chip" href="tel:+918209199864">📞 Call</a><a class="chip chip--wa" target="_blank" rel="noopener" href="https://wa.me/918209199864">WhatsApp</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ RSVP ============ -->
+    <section id="rsvp" class="rsvp">
+      <header class="sec-head reveal">
+        <p class="eyebrow-script">Kindly respond</p>
+        <h2>CONFIRM YOUR PRESENCE</h2>
+        <div class="divider"><span></span><b>❖</b><span></span></div>
+        <p class="deva sub">आपकी उपस्थिति हमारा सौभाग्य</p>
+      </header>
+      <form class="rsvp-form reveal" id="rsvpForm" novalidate>
+        <label>Guest Name <span class="deva">· अतिथि का नाम</span>
+          <input name="name" required autocomplete="name" placeholder="Your full name">
+        </label>
+        <label>Mobile Number <span class="deva">· मोबाइल नंबर</span>
+          <input name="phone" required inputmode="tel" autocomplete="tel" placeholder="10-digit mobile number" pattern="[0-9+\s-]{10,15}">
+        </label>
+        <label>Number of Guests <span class="deva">· अतिथि संख्या</span>
+          <input name="guests" type="number" min="1" max="20" value="1" required>
+        </label>
+        <fieldset>
+          <legend>Will you attend? <span class="deva">· क्या आप पधारेंगे?</span></legend>
+          <label class="radio"><input type="radio" name="attend" value="yes" checked><span>Joyfully accept · <i class="deva">अवश्य पधारेंगे</i></span></label>
+          <label class="radio"><input type="radio" name="attend" value="no"><span>Regretfully decline · <i class="deva">क्षमा करें</i></span></label>
+        </fieldset>
+        <label>Personal Message <span class="deva">· शुभकामना संदेश</span>
+          <textarea name="message" rows="3" placeholder="Your blessings for Rishi & Manisha"></textarea>
+        </label>
+        <p class="form-err" id="formErr" role="alert"></p>
+        <div class="btn-row">
+          <button class="btn btn--maroon" type="submit">Confirm Attendance</button>
+          <a class="btn btn--line" id="waFamily" target="_blank" rel="noopener" href="https://wa.me/919460385222?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20%F0%9F%99%8F">Contact Family on WhatsApp</a>
+        </div>
+        <p class="rsvp-note">Your reply is sent to the family through WhatsApp — nothing is stored on this website.</p>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div class="monogram monogram--ring"><span>R</span><i>&amp;</i><span>M</span></div>
+      <p class="foot-names">Rishi &amp; Manisha</p>
+      <p class="deva">14 दिसंबर 2026 · जयपुर</p>
+      <p class="foot-small deva">आपके आगमन की प्रतीक्षा में — समस्त मिश्र परिवार</p>
+    </footer>
+  </main>
+
+  <!-- RSVP confirmation overlay -->
+  <div class="overlay" id="overlay" hidden>
+    <div class="ov-card" role="dialog" aria-modal="true" aria-labelledby="ovTitle">
+      <svg class="ov-check" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="34" fill="none" stroke="#B18A45" stroke-width="3"/><path d="M24 41 l11 11 l22 -24" fill="none" stroke="#3C2A21" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3 id="ovTitle" class="tiro">धन्यवाद!</h3>
+      <p id="ovText">Your RSVP is ready. WhatsApp has opened with your message — please press <b>Send</b> there to confirm with the family.</p>
+      <div class="btn-row">
+        <a class="btn btn--maroon" id="ovWa" target="_blank" rel="noopener" href="#">Open WhatsApp again</a>
+        <button class="btn btn--line" id="ovClose">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="music.js?v=royal_v3"></script>
+  <script src="app.js?v=royal_v3"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 @echo off
 title Rishi ^& Manisha - Royal Rajasthani Invitation
-cd /d "%~dp0rajasthani"
+cd /d "%~dp0"
 echo ======================================================
 echo  Starting Royal Rajasthani Wedding Invitation...
 echo  Open: http://localhost:3001
