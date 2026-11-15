@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rishi & Manisha | Shubh Vivah</title>
+
+  <!-- Google Fonts for Royal Indian Wedding Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <!-- Top Sticky Atmosphere & Audio Navigation Bar -->
+  <header class="atmosphere-bar">
+    <a href="#screen-hero" class="brand-monogram">
+      <div class="brand-crest js-monogram">R&M</div>
+      <span class="brand-text js-couple-names">Rishi & Manisha</span>
+    </a>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#screen-hero">Cover</a></li>
+        <li><a href="#screen-invitation">Invite</a></li>
+        <li><a href="#screen-events">Events</a></li>
+        <li><a href="#screen-couple">Couple</a></li>
+        <li><a href="#screen-story">Our Story</a></li>
+        <li><a href="#screen-social">RSVP</a></li>
+      </ul>
+    </nav>
+
+    <div class="action-controls">
+      <!-- Music Synthesizer Controller -->
+      <button id="music-toggle-btn" class="control-btn" title="Traditional Shehnai & Sitar Music">
+        <span class="music-icon">🎵</span>
+        <span class="btn-text">Play Shehnai</span>
+      </button>
+
+      <!-- Day / Ganga Aarti Twilight Atmosphere Toggle -->
+      <button id="theme-toggle-btn" class="control-btn" title="Toggle Day vs Ganga Aarti Evening Atmosphere">
+        <span class="theme-icon">☀️</span>
+        <span class="btn-text">Sunlit Ghats</span>
+      </button>
+
+      <!-- Edit Details Drawer Trigger -->
+      <button id="open-customizer-btn" class="control-btn" title="Customize Names, Dates & Venues">
+        <span>⚙️</span>
+        <span class="btn-text">Edit Details</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="main-wrapper">
+
+    <!-- ====================================================================
+         SCREEN 1: HERO COVER (Clean Arch - No Baked-In Text)
+         ==================================================================== -->
+    <section id="screen-hero" class="video-screen screen-hero">
+      <!-- Brand New Clean Sandstone Arch Background (No text in artwork) -->
+      <img src="assets/clean_hero_arch.jpg" alt="Rishi weds Manisha at Varanasi Ghats" class="screen-hero-bg">
+
+      <!-- Hanging Temple Bells from Arch -->
+      <div class="arch-bells-container">
+        <div class="temple-bell" title="Click to ring the sacred temple bell!">
+          <div class="bell-rope"></div>
+          <div class="bell-body"></div>
+          <div class="bell-clapper"></div>
+        </div>
+        <div class="temple-bell" title="Click to ring the sacred temple bell!">
+          <div class="bell-rope"></div>
+          <div class="bell-body"></div>
+          <div class="bell-clapper"></div>
+        </div>
+      </div>
+
+      <!-- Center Gold Typography: RISHI WEDS MANISHA -->
+      <div class="hero-title-overlay">
+        <span class="hero-gold-name js-groom-name">RISHI</span>
+        <span class="hero-gold-weds">WEDS</span>
+        <span class="hero-gold-name js-bride-name">MANISHA</span>
+      </div>
+
+      <!-- Live River Animation Canvas (Boats, Boatmen, Floating Diyas, Waves) -->
+      <canvas id="river-canvas" class="hero-river-canvas"></canvas>
+
+      <!-- Bottom Stage: Muhurat Countdown & Scroll Down Prompt -->
+      <div class="hero-bottom-stage">
+        <div class="countdown-pill">
+          <div class="countdown-col">
+            <span id="count-days" class="count-num">00</span>
+            <span class="count-tag">Days</span>
+          </div>
+          <div class="countdown-col">
+            <span id="count-hours" class="count-num">00</span>
+            <span class="count-tag">Hours</span>
+          </div>
+          <div class="countdown-col">
+            <span id="count-mins" class="count-num">00</span>
+            <span class="count-tag">Mins</span>
+          </div>
+          <div class="countdown-col">
+            <span id="count-secs" class="count-num">00</span>
+            <span class="count-tag">Secs</span>
+          </div>
+        </div>
+        <br>
+        <a href="#screen-invitation" class="scroll-hint-link">
+          <span>Scroll To View Invitation</span>
+          <span>↓</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SCREEN 2: FORMAL INVITATION (Only Rishi & Manisha)
+         ==================================================================== -->
+    <section id="screen-invitation" class="video-screen screen-invitation">
+      <img src="assets/clean_hero_arch.jpg" alt="Varanasi Arch" class="screen-invitation-bg">
+
+      <div class="invitation-text-container">
+        <!-- Ganesha Crest -->
+        <div class="ganesha-crest-box">
+          <div class="ganesha-crest-img">卐</div>
+          <span class="ganesha-shloka-text">॥ श्री गणेशाय नमः ॥</span>
+        </div>
+
+        <p class="invite-lead-text">
+          With the divine blessings of God and the Almighty,<br>
+          we cordially
+        </p>
+
+        <h2 class="huge-invite-title">INVITE YOU</h2>
+
+        <p class="invite-lead-text" style="font-size: 1.15rem; margin: 6px 0;">
+          to celebrate the auspicious wedding ceremony of
+        </p>
+
+        <div class="invite-names-center">
+          <div class="invite-couple-title js-groom-name">RISHI</div>
+          <div class="invite-couple-amp">&</div>
+          <div class="invite-couple-title js-bride-name">MANISHA</div>
+        </div>
+
+        <p class="invite-lead-text" style="font-size: 1.05rem; margin-top: 10px;">
+          and shower your gracious presence and heartfelt blessings
+        </p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SCREEN 3: "ON THE FOLLOWING EVENTS" (Clean Event Card Slider)
+         ==================================================================== -->
+    <section id="screen-events" class="video-screen screen-events">
+      <img src="assets/clean_hero_arch.jpg" alt="Varanasi Ghats Backdrop" class="screen-events-bg">
+
+      <div class="events-section-header">
+        <h2 class="events-section-title">On the following events</h2>
+      </div>
+
+      <!-- Centered Rounded Event Card Slider -->
+      <div class="event-card-container">
+        <!-- Amber / Gold Top Section -->
+        <div class="event-card-top">
+          <h3 id="event-card-title" class="event-card-name">MEHANDI</h3>
+          <p id="event-card-subtitle" class="event-card-subtitle">Fragrance of green henna & auspicious joy</p>
+          <div id="event-card-time" class="event-card-time-venue">Friday, 12th Dec 2026 • 04:00 PM • Varanasi</div>
+        </div>
+
+        <!-- White Bottom Section -->
+        <div class="event-card-bottom">
+          <div class="event-card-illustration-box">
+            <img id="event-card-img" src="assets/clean_mehendi_card.jpg" alt="Wedding Event Ceremony Illustration" class="event-card-illustration">
+          </div>
+
+          <!-- Carousel Dots -->
+          <div id="carousel-dots-wrapper" class="carousel-dots"></div>
+
+          <!-- Navigation Controls -->
+          <div class="card-nav-controls">
+            <button id="event-prev-btn" class="carousel-arrow-btn" title="Previous Ceremony">‹</button>
+            <button class="card-action-btn js-add-calendar">
+              <span>📅</span> Add to Calendar
+            </button>
+            <button id="event-next-btn" class="carousel-arrow-btn" title="Next Ceremony">›</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 10px;"></div>
+    </section>
+
+    <!-- ====================================================================
+         SCREEN 4: "MEET THE BRIDE & GROOM"
+         ==================================================================== -->
+    <section id="screen-couple" class="video-screen screen-meet-couple">
+      <img src="assets/clean_hero_arch.jpg" alt="Varanasi Arch" class="screen-meet-bg" style="opacity: 0.25;">
+
+      <div class="meet-heading-box">
+        <span class="meet-pretitle">Meet The</span>
+        <span class="meet-title-script">Bride & Groom</span>
+      </div>
+
+      <!-- Clean Couple Embracing at Ghats Artwork -->
+      <div class="meet-portrait-frame">
+        <img src="assets/bride_groom_meet.jpg" alt="Rishi and Manisha embracing at Varanasi Ghats" class="meet-portrait-img">
+      </div>
+
+      <!-- Couple Romantic Cards -->
+      <div class="couple-bio-grid">
+        <div class="bio-card">
+          <h3 class="bio-name js-groom-name">Rishi</h3>
+          <span class="bio-role">The Groom</span>
+          <p class="bio-p">
+            Calm as the sacred Ganga at dawn, deeply rooted in Indian heritage, music, and eternal love. Finding his lifelong companion in Manisha.
+          </p>
+        </div>
+
+        <div class="bio-card">
+          <h3 class="bio-name js-bride-name">Manisha</h3>
+          <span class="bio-role">The Bride</span>
+          <p class="bio-p">
+            Radiant as the evening deepams, full of grace, warmth, elegance, and joyous laughter. Found her forever anchor in Rishi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SCREEN 5: LOVE STORY PATRIKA ("R&M" Clean Pichwai Frame)
+         ==================================================================== -->
+    <section id="screen-story" class="video-screen screen-love-story">
+      <!-- Brand New Clean Pichwai Temple Border Frame (No text baked in) -->
+      <img src="assets/clean_invitation_frame.jpg" alt="Traditional Indian Wedding Frame" class="patrika-full-frame">
+
+      <!-- Text Overlay directly over central cutout -->
+      <div class="love-story-overlay">
+        <div class="story-monogram js-monogram">R&M</div>
+
+        <p class="story-main-paragraph">
+          Our love stories are written by destiny. Rishi and Manisha's journey began as two individuals with different paths, dreams, and aspirations, yet fate gently brought them together. What started as a simple connection soon grew into a bond filled with trust, understanding, and affection. In each other, they found not only a life partner, but also a best friend - someone to share every joy, overcome every challenge, and cherish every memory. With the blessings of their families and loved ones, they begin a beautiful new chapter, promising to walk hand-in-hand through all the seasons of life, united in love, respect, and an everlasting commitment to one another.
+        </p>
+
+        <!-- Mini Moments Gallery Row -->
+        <div class="story-moments-row">
+          <div class="moment-card" title="First Connection">
+            <img src="assets/bride_groom_meet.jpg" alt="Couple Moment">
+          </div>
+          <div class="moment-card" title="Mehendi Festivities">
+            <img src="assets/clean_mehendi_card.jpg" alt="Mehendi Moment">
+          </div>
+          <div class="moment-card" title="Haldi Sunshine">
+            <img src="assets/haldi_card.jpg" alt="Haldi Moment">
+          </div>
+          <div class="moment-card" title="Sangeet Rhythms">
+            <img src="assets/sangeet_card.jpg" alt="Sangeet Moment">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SCREEN 6: "FOLLOW INSTAGRAM" & RSVP (Clean Aarti Frame)
+         ==================================================================== -->
+    <section id="screen-social" class="video-screen screen-instagram-rsvp">
+      <!-- Brand New Clean Night Ghats Aarti Frame (No text baked in) -->
+      <img src="assets/clean_rsvp_social_frame.jpg" alt="Follow Instagram and RSVP Card" class="instagram-frame-bg">
+
+      <div class="instagram-overlay-content">
+        <div class="instagram-main-title">
+          FOLLOW<br>INSTAGRAM
+        </div>
+
+        <div class="instagram-action-stack">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="ig-pill-btn">
+            <span>📸</span> Instagram • <span class="js-hashtag">#RishiWedsManisha</span>
+          </a>
+          <button class="rsvp-open-btn js-open-rsvp">
+            <span>💌</span> Confirm Your RSVP
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ====================================================================
+       INTERACTIVE RSVP MODAL
+       ==================================================================== -->
+  <div id="rsvp-modal-overlay" class="modal-overlay">
+    <div class="modal-card">
+      <button id="rsvp-modal-close" class="modal-close-btn">&times;</button>
+      <h3 style="font-family: var(--font-heading); color: var(--maroon-royal); margin-bottom: 6px; font-size: 1.4rem;">
+        Confirm Your Gracious Presence
+      </h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 18px;">
+        Join us in Kashi as Rishi and Manisha celebrate their sacred vows.
+      </p>
+
+      <form id="modal-rsvp-form">
+        <div class="form-group">
+          <label>Your Full Name *</label>
+          <input type="text" name="rsvp_name" class="form-control" placeholder="e.g. Rahul Sharma" required>
+        </div>
+
+        <div class="form-group">
+          <label>Phone / WhatsApp *</label>
+          <input type="tel" name="rsvp_phone" class="form-control" placeholder="+91 98765 43210" required>
+        </div>
+
+        <div class="form-group">
+          <label>Total Attending Guests</label>
+          <select name="rsvp_guests" class="form-control">
+            <option value="1">1 Guest</option>
+            <option value="2" selected>2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4+">4+ Guests (Family)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Dietary Preferences</label>
+          <select name="rsvp_diet" class="form-control">
+            <option value="satvik">Satvik / Pure Vegetarian Banarasi Feast</option>
+            <option value="jain">Jain Vegetarian (No onion, no garlic)</option>
+            <option value="standard">Standard Vegetarian</option>
+          </select>
+        </div>
+
+        <button type="submit" class="rsvp-open-btn" style="width: 100%; margin-top: 10px; padding: 12px;">
+          <span>🪷</span> Submit RSVP With Blessings
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       CUSTOM DETAILS DRAWER (ONLY RISHI & MANISHA)
+       ==================================================================== -->
+  <aside id="customizer-drawer" class="customizer-drawer" aria-label="Details Customizer">
+    <div class="drawer-header">
+      <h3 class="drawer-title">⚙️ Customize Wedding Details</h3>
+      <button id="close-customizer-btn" class="modal-close-btn" style="position: static; font-size: 1.5rem;">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <p style="font-size: 0.85rem; color: var(--text-muted);">
+        Update names or hashtags below to see them reflect instantly across all screens:
+      </p>
+
+      <div class="form-group">
+        <label>Groom's Name</label>
+        <input type="text" id="edit-groom" class="form-control" value="RISHI">
+      </div>
+
+      <div class="form-group">
+        <label>Bride's Name</label>
+        <input type="text" id="edit-bride" class="form-control" value="MANISHA">
+      </div>
+
+      <div class="form-group">
+        <label>Wedding Hashtag</label>
+        <input type="text" id="edit-hashtag" class="form-control" value="#RishiWedsManisha">
+      </div>
+
+      <div class="form-group">
+        <label>Monogram Initials</label>
+        <input type="text" id="edit-initials" class="form-control" value="R&M">
+      </div>
+
+      <button id="save-customizer-btn" class="rsvp-open-btn" style="margin-top: 10px; width: 100%;">
+        💾 Save & Update All Screens
+      </button>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-shloka">॥ ॐ नमः पार्वती पतये हर हर महादेव ॥</div>
+    <p class="footer-copyright">
+      With Gratitude & Blessings • Sacred Varanasi Heritage Wedding Invitation
+    </p>
+  </footer>
+
+  <!-- Animation & Interaction Scripts -->
+  <script src="river-scene.js"></script>
+  <script src="audio.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

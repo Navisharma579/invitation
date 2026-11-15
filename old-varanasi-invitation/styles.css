@@ -1,0 +1,1202 @@
+/* ==========================================================================
+   KRISHNA & RADHA - ROYAL INDIAN WEDDING INVITATION
+   Varanasi Heritage Theme • Clean Video UI Edition
+   ========================================================================== */
+
+:root {
+  /* Royal Color Palette */
+  --sandstone-light: #f7ebdb;
+  --sandstone: #dfc194;
+  --sandstone-dark: #a9804e;
+  --gold-foil: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+  --gold-bright: #d4af37;
+  --gold-text: #b8860b;
+  --gold-card-header: #f3be50;
+  --ganga-blue: #23526c;
+  --ganga-sky: #78b8dc;
+  --maroon-royal: #7a1c1d;
+  --maroon-deep: #4c0f12;
+  --cream-parchment: #fdfaf4;
+  --charcoal-ink: #2b231c;
+  --text-muted: #6e6052;
+  --font-heading: 'Cinzel Decorative', 'Playfair Display', serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-sanskrit: 'Rozha One', 'Yatra One', serif;
+}
+
+/* Base & Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-serif);
+  background-color: #f7ebd9;
+  color: var(--charcoal-ink);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+body.night-mode {
+  background-color: #070e1c;
+  color: #f7ebdb;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #f1e4d0;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #b38728, #7a1c1d);
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   FLOATING ATMOSPHERE BAR
+   ========================================================================== */
+.atmosphere-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 24px;
+  background: rgba(253, 250, 244, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+body.night-mode .atmosphere-bar {
+  background: rgba(11, 21, 38, 0.92);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.brand-monogram {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--maroon-royal);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+}
+body.night-mode .brand-monogram {
+  color: #ffd54f;
+}
+
+.brand-crest {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--gold-foil);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  color: var(--maroon-deep);
+  box-shadow: 0 2px 6px rgba(184, 134, 40, 0.3);
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--charcoal-ink);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 3px 0;
+}
+
+body.night-mode .nav-links a {
+  color: #e5dac9;
+}
+
+.nav-links a:hover {
+  color: var(--maroon-royal);
+}
+body.night-mode .nav-links a:hover {
+  color: #ffd54f;
+}
+
+.action-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.control-btn {
+  background: white;
+  border: 1px solid var(--gold-bright);
+  border-radius: 25px;
+  padding: 6px 13px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--charcoal-ink);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+body.night-mode .control-btn {
+  background: #142138;
+  color: #f7ebdb;
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+.control-btn:hover {
+  background: var(--gold-foil);
+  color: var(--maroon-deep);
+  transform: translateY(-2px);
+}
+
+.control-btn.active {
+  background: var(--maroon-royal);
+  color: white;
+  border-color: var(--maroon-royal);
+}
+
+/* ==========================================================================
+   MAIN CLEAN CONTAINER & VIDEO SCREENS
+   ========================================================================== */
+.main-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 60px 15px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+/* Common Video Screen Card */
+.video-screen {
+  position: relative;
+  width: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: #fbf6ec;
+}
+
+body.night-mode .video-screen {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+  border-color: rgba(212, 175, 55, 0.35);
+  background: #0d1727;
+}
+
+/* ==========================================================================
+   SCREEN 1: HERO COVER ("KRISHNA WEDS RADHA")
+   ========================================================================== */
+.screen-hero {
+  height: 90vh;
+  min-height: 600px;
+  max-height: 840px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #7dbce0;
+}
+
+.screen-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: 1;
+  transition: filter 1s ease;
+}
+
+body.night-mode .screen-hero-bg {
+  filter: brightness(0.72) contrast(1.15) hue-rotate(-15deg);
+}
+
+/* Temple Bells */
+.arch-bells-container {
+  position: absolute;
+  top: 14px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 35px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.temple-bell {
+  pointer-events: auto;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: top center;
+  animation: swayBell 4s ease-in-out infinite;
+}
+
+.temple-bell:nth-child(2) {
+  animation-delay: -1.8s;
+}
+
+.bell-rope {
+  width: 3px;
+  height: 40px;
+  background: linear-gradient(180deg, #aa2222, #e5a722);
+}
+
+.bell-body {
+  width: 26px;
+  height: 26px;
+  background: radial-gradient(circle at 35% 35%, #ffe57f, #c79100 70%, #684800 100%);
+  border-radius: 50% 50% 15% 15%;
+  position: relative;
+}
+
+.bell-clapper {
+  width: 7px;
+  height: 9px;
+  background: #ffb300;
+  border-radius: 50%;
+  margin-top: -2px;
+}
+
+@keyframes swayBell {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+/* Screen 1 Typography: Exact match to video */
+.hero-title-overlay {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  margin: 14vh auto 0;
+  padding: 8px 20px;
+  display: inline-block;
+}
+
+.hero-gold-name {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #fff9e6;
+  text-transform: uppercase;
+  text-shadow: 
+    0 2px 10px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(212, 175, 55, 0.5);
+  line-height: 1.1;
+  display: block;
+}
+
+.hero-gold-weds {
+  display: block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  letter-spacing: 5px;
+  color: #ffe082;
+  margin: 2px 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* River Canvas on Screen 1 */
+.hero-river-canvas {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 28%;
+  z-index: 4;
+}
+
+/* Screen 1 Bottom Stage */
+.hero-bottom-stage {
+  position: relative;
+  z-index: 6;
+  padding: 15px 20px 22px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(16, 38, 54, 0.8) 85%);
+  pointer-events: none;
+}
+
+.countdown-pill {
+  display: inline-flex;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 224, 130, 0.45);
+  padding: 8px 22px;
+  border-radius: 40px;
+  margin-bottom: 12px;
+  pointer-events: auto;
+}
+
+.countdown-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 44px;
+}
+
+.count-num {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff9e6;
+  line-height: 1;
+}
+
+.count-tag {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffe082;
+  margin-top: 3px;
+}
+
+.scroll-hint-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff9e6;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  pointer-events: auto;
+  transition: all 0.3s ease;
+  animation: bounceDown 2s infinite ease-in-out;
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* ==========================================================================
+   SCREEN 2: FORMAL INVITATION ("INVITE")
+   Exact match to video 00:07 - 00:12
+   ========================================================================== */
+.screen-invitation {
+  min-height: 720px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 30px;
+  background: #6faed4;
+  overflow: hidden;
+}
+
+.screen-invitation-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: 1;
+  opacity: 0.35;
+}
+
+.invitation-text-container {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  max-width: 660px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.ganesha-crest-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.ganesha-crest-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gold-foil);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--maroon-royal);
+  box-shadow: 0 4px 12px rgba(184, 134, 40, 0.35);
+}
+
+.ganesha-shloka-text {
+  font-family: var(--font-sanskrit);
+  font-size: 1.05rem;
+  color: #fff8e1;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.invite-lead-text {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  line-height: 1.5;
+}
+
+.huge-invite-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 6vw, 4.4rem);
+  font-weight: 900;
+  color: #f7e2a4;
+  letter-spacing: 6px;
+  text-shadow: 
+    0 2px 10px rgba(0, 0, 0, 0.8),
+    0 0 25px rgba(212, 175, 55, 0.6);
+  margin: 6px 0;
+  text-transform: uppercase;
+}
+
+.invite-parents-block {
+  font-size: 1rem;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  line-height: 1.6;
+}
+
+.invite-parents-block strong {
+  color: #fff9e6;
+  font-weight: 600;
+}
+
+.invite-names-center {
+  margin: 10px 0;
+}
+
+.invite-couple-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  color: #fff8e1;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.5);
+  line-height: 1.2;
+}
+
+.invite-couple-amp {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.8rem;
+  color: #ffe082;
+  margin: 2px 0;
+}
+
+/* ==========================================================================
+   SCREEN 3: "ON THE FOLLOWING EVENTS" (CAROUSEL / SLIDER CARD)
+   Exact match to video 00:13 - 00:20
+   ========================================================================== */
+.screen-events {
+  min-height: 750px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px 30px;
+  background: #73b0d4;
+  overflow: hidden;
+}
+
+.screen-events-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  z-index: 1;
+}
+
+.events-section-header {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.events-section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #fff9e6;
+  text-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(212, 175, 55, 0.5);
+  letter-spacing: 1px;
+}
+
+/* Centered Rounded Card matching video */
+.event-card-container {
+  position: relative;
+  z-index: 5;
+  width: 90%;
+  max-width: 380px;
+  background: white;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(212, 175, 55, 0.4);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease;
+}
+
+/* Top Amber/Gold Half of the Card */
+.event-card-top {
+  background: linear-gradient(180deg, #f5c45b 0%, #ebb244 100%);
+  padding: 24px 20px 18px;
+  text-align: center;
+  color: #5c3809;
+}
+
+.event-card-name {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #5c3809;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.event-card-subtitle {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: #6d4610;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.event-card-time-venue {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #7a4e13;
+}
+
+/* Bottom White Half of the Card */
+.event-card-bottom {
+  background: #ffffff;
+  padding: 16px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event-card-illustration-box {
+  width: 100%;
+  height: 230px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background: #f7f1e6;
+}
+
+.event-card-illustration {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Dot Indicators matching video */
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.carousel-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #dfcb9e;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: #c9933e;
+  width: 24px;
+  border-radius: 10px;
+}
+
+/* Card Navigation Pill Buttons */
+.card-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  justify-content: center;
+}
+
+.carousel-arrow-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #fdfaf4;
+  border: 1px solid var(--gold-bright);
+  color: var(--charcoal-ink);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.carousel-arrow-btn:hover {
+  background: var(--gold-foil);
+  color: var(--maroon-deep);
+  transform: scale(1.08);
+}
+
+.card-action-btn {
+  background: var(--gold-foil);
+  color: var(--maroon-deep);
+  border: 1px solid var(--gold-bright);
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 134, 40, 0.35);
+}
+
+/* ==========================================================================
+   SCREEN 4: "MEET THE BRIDE & GROOM"
+   Exact match to video 00:21 - 00:28
+   ========================================================================== */
+.screen-meet-couple {
+  min-height: 750px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 25px 40px;
+  background: #6faed4;
+  overflow: hidden;
+}
+
+.screen-meet-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: 1;
+}
+
+.meet-heading-box {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.meet-pretitle {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: #fff9e6;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  display: block;
+  text-transform: uppercase;
+}
+
+.meet-title-script {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  color: #ffe082;
+  text-shadow: 
+    0 2px 10px rgba(0, 0, 0, 0.8),
+    0 0 25px rgba(212, 175, 55, 0.6);
+  line-height: 1.1;
+  display: block;
+}
+
+.meet-portrait-frame {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    0 0 0 8px rgba(255, 255, 255, 0.85),
+    0 0 0 10px var(--gold-bright);
+  margin-bottom: 25px;
+}
+
+.meet-portrait-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.couple-bio-grid {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 680px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.bio-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+body.night-mode .bio-card {
+  background: rgba(17, 26, 46, 0.92);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.bio-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--maroon-royal);
+  margin-bottom: 4px;
+}
+body.night-mode .bio-name {
+  color: #ffd54f;
+}
+
+.bio-role {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold-text);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.bio-p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--charcoal-ink);
+}
+
+/* ==========================================================================
+   SCREEN 5: LOVE STORY PATRIKA ("K&R")
+   Exact match to video 00:29 - 00:32
+   ========================================================================== */
+.screen-love-story {
+  position: relative;
+  background: #0d1b2a;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.patrika-full-frame {
+  width: 100%;
+  display: block;
+}
+
+.love-story-overlay {
+  position: absolute;
+  top: 15%;
+  left: 14%;
+  width: 72%;
+  height: 78%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  z-index: 5;
+}
+
+.story-monogram {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 800;
+  color: #8b2626;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+
+.story-main-paragraph {
+  font-family: var(--font-serif);
+  font-size: clamp(0.78rem, 1.25vw, 1.05rem);
+  color: #3d2d20;
+  line-height: 1.7;
+  max-width: 580px;
+  margin-bottom: 18px;
+}
+
+/* Mini Photo Moments Gallery */
+.story-moments-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
+}
+
+.moment-card {
+  width: 85px;
+  height: 85px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--gold-bright);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.moment-card:hover {
+  transform: scale(1.1);
+}
+
+.moment-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   SCREEN 6: "FOLLOW INSTAGRAM" & RSVP
+   Exact match to video 00:33 - 00:34
+   ========================================================================== */
+.screen-instagram-rsvp {
+  position: relative;
+  background: #0b1526;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.instagram-frame-bg {
+  width: 100%;
+  display: block;
+}
+
+.instagram-overlay-content {
+  position: absolute;
+  top: 15%;
+  left: 18%;
+  width: 64%;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  z-index: 5;
+}
+
+.instagram-main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #7a1c1d;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.instagram-action-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 240px;
+}
+
+.ig-pill-btn {
+  background: linear-gradient(135deg, #e1306c, #833ab4);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 9px 18px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.ig-pill-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(225, 48, 108, 0.4);
+}
+
+.rsvp-open-btn {
+  background: var(--gold-foil);
+  color: var(--maroon-deep);
+  border: 1px solid var(--gold-bright);
+  border-radius: 25px;
+  padding: 9px 18px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.rsvp-open-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(184, 134, 40, 0.4);
+}
+
+/* ==========================================================================
+   INTERACTIVE RSVP MODAL
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 2500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 20px;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-card {
+  background: var(--cream-parchment);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 520px;
+  border: 2px solid var(--gold-bright);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.open .modal-card {
+  transform: translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--charcoal-ink);
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 8px;
+  background: white;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--charcoal-ink);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--gold-text);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+}
+
+/* ==========================================================================
+   DETAILS CUSTOMIZER DRAWER (FOR USER TO EDIT NAMES/DATES/VENUES)
+   ========================================================================== */
+.customizer-drawer {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 400px;
+  max-width: 90vw;
+  height: 100vh;
+  background: var(--cream-parchment);
+  z-index: 2000;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
+  border-left: 2px solid var(--gold-bright);
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.customizer-drawer.open {
+  right: 0;
+}
+
+.drawer-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--maroon-royal);
+}
+
+.drawer-body {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Footer */
+.site-footer {
+  background: #0d1b2a;
+  color: #fdfaf4;
+  padding: 40px 20px 25px;
+  text-align: center;
+  border-top: 2px solid var(--gold-bright);
+}
+
+.footer-shloka {
+  font-family: var(--font-sanskrit);
+  font-size: 1.2rem;
+  color: #ffe082;
+  margin-bottom: 8px;
+}
+
+.footer-copyright {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  color: #8c9ba5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .couple-bio-grid {
+    grid-template-columns: 1fr;
+  }
+  .love-story-overlay {
+    top: 12%;
+    left: 8%;
+    width: 84%;
+    height: 82%;
+  }
+  .story-moments-row {
+    flex-wrap: wrap;
+  }
+}
