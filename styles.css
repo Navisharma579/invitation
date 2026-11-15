@@ -2297,3 +2297,104 @@ a { color: inherit; }
   .screen-bg img { transform: translateZ(0); }
   .reveal { transition-duration: .7s; }
 }
+
+/* =====================================================================
+   ROYAL ANIMATION LAYER (effects.js adds .fx on <html>; off for reduce-motion)
+   Transform/opacity only, so it stays smooth on phones.
+   ===================================================================== */
+
+/* ---- Letter / word reveal for headings & names ---- */
+.fx .w { display: inline-block; white-space: nowrap; }
+.fx .sp { display: inline-block; opacity: 0; transform: translateY(.55em) rotateX(-70deg); transform-origin: 50% 100%; }
+.fx .is-in .sp, .fx .footer.is-in .sp {
+  animation: fxLetter .8s cubic-bezier(.2,.8,.2,1) forwards, fxGlint 1.3s ease forwards;
+  animation-delay: calc(var(--d, 0s) + .2s), calc(var(--d, 0s) + .95s);
+}
+.fx .hero-in .hero-names .sp {
+  animation: fxLetter .9s cubic-bezier(.2,.8,.2,1) forwards, fxGlint 1.4s ease forwards;
+  animation-delay: calc(var(--d, 0s) + .9s), calc(var(--d, 0s) + 1.8s);
+}
+@keyframes fxLetter { to { opacity: 1; transform: none; } }
+@keyframes fxGlint { 45% { color: #F3CF7A; text-shadow: 0 0 16px rgba(255, 210, 120, .85), 0 0 2px rgba(255, 255, 255, .9); } }
+
+/* ---- Script lines look hand-written ---- */
+.fx .reveal .eyebrow-script, .fx .hero .h-script {
+  clip-path: inset(-30% 100% -30% -10%);
+  transition: clip-path 1.6s cubic-bezier(.6,.1,.3,1) .1s;
+}
+.fx .reveal.is-in .eyebrow-script, .fx .hero-in .hero .h-script { clip-path: inset(-30% -10% -30% -10%); }
+.fx .hero-in .hero .h-script { transition-delay: .5s; }
+
+/* ---- Dividers open from the centre, gem spins in ---- */
+.fx .reveal .divider span, .fx .reveal .card-p-divider span, .fx .card .c-sang span { transform: scaleX(0); transition: transform 1.2s cubic-bezier(.2,.8,.2,1) .45s; }
+.fx .reveal.is-in .divider span, .fx .reveal.is-in .card-p-divider span, .fx .card.is-in .c-sang span { transform: scaleX(1); }
+.fx .reveal .divider b, .fx .reveal .card-p-divider b { display: inline-block; opacity: 0; transform: rotate(-180deg) scale(.3); transition: transform .9s cubic-bezier(.3,1.5,.5,1) .35s, opacity .5s .35s; }
+.fx .reveal.is-in .divider b, .fx .reveal.is-in .card-p-divider b { opacity: 1; transform: none; }
+
+/* ---- Invitation card: each line appears in turn, names glow ---- */
+.fx .card.reveal .card-inner > * { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .8s cubic-bezier(.2,.8,.2,1); transition-delay: calc(.35s + var(--i, 0) * .09s); }
+.fx .card.reveal.is-in .card-inner > * { opacity: 1; transform: none; }
+.fx .card.is-in .card-kalash { animation: fxKalash 1.2s cubic-bezier(.3,1.4,.5,1) .3s both; }
+@keyframes fxKalash { from { opacity: 0; transform: translateY(-20px) scale(.5) rotate(-12deg); } }
+.fx .card.is-in .c-band { animation: fxBand 3.5s ease-in-out 2.2s infinite; }
+@keyframes fxBand { 50% { box-shadow: 0 0 22px rgba(197, 160, 89, .45); } }
+
+/* ---- Cards: staggered 3D lift-in ---- */
+.fx-card { position: relative; }
+.fx .fx-card.reveal, .fx .reveal .fx-card:not(.reveal) {
+  opacity: 0;
+  transform: perspective(1000px) translateY(46px) rotateX(14deg) scale(.95);
+  transition: opacity .9s ease, transform 1.1s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+  transition-delay: var(--delay, 0s);
+}
+.fx .fx-card.reveal.is-in, .fx .reveal.is-in .fx-card:not(.reveal) { opacity: 1; transform: none; }
+.fx .fx-card.fx-settled { transition: transform .25s ease, box-shadow .35s ease, opacity .3s ease; transition-delay: 0s; }
+@media (hover: hover) and (pointer: fine) {
+  .fx .fx-card.fx-settled:hover { transform: translateY(-6px); box-shadow: 0 26px 50px rgba(60, 42, 33, .18); }
+}
+.fx .couple-mono.is-in .monogram--ring { animation: fxRing 1.2s cubic-bezier(.3,1.5,.5,1) .4s both, fxRingGlow 3.2s ease-in-out 1.8s infinite; }
+@keyframes fxRing { from { opacity: 0; transform: scale(.3) rotate(-120deg); } }
+@keyframes fxRingGlow { 50% { box-shadow: 0 0 0 6px rgba(197, 160, 89, .18), 0 0 34px rgba(197, 160, 89, .55); } }
+
+/* event rows slide in after their card */
+.fx .royal-event-card .rec-item { opacity: 0; transform: translateX(-18px); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.8,.2,1); transition-delay: calc(var(--delay, 0s) + .45s + var(--j, 0) * .12s); }
+.fx .royal-event-card.is-in .rec-item { opacity: 1; transform: none; }
+.fx .royal-event-card.is-in .rec-ico { animation: fxIco .9s cubic-bezier(.3,1.6,.5,1) both; animation-delay: calc(var(--delay, 0s) + .55s + var(--j, 0) * .12s); }
+@keyframes fxIco { from { transform: scale(0) rotate(-90deg); } }
+
+/* countdown tiles pop in; seconds tile breathes */
+.fx .cd-grid .cd-tile:not(.reveal) { transform: translateY(30px) scale(.85); }
+.fx .cd-grid.is-in .cd-tile:last-child { animation: fxBreath 2s ease-in-out 2s infinite; }
+@keyframes fxBreath { 50% { transform: scale(1.04); } }
+
+/* ---- Gold shine sweep (once on entry, again on hover) + cursor glare ---- */
+.fx-shine { position: absolute; inset: 0; border-radius: inherit; overflow: hidden; pointer-events: none; z-index: 4; }
+.fx-shine::before {
+  content: ''; position: absolute; top: -25%; bottom: -25%; left: 0; width: 42%;
+  background: linear-gradient(105deg, transparent 0%, rgba(255, 240, 205, 0) 20%, rgba(255, 233, 180, .55) 50%, rgba(255, 240, 205, 0) 80%, transparent 100%);
+  transform: translateX(-130%) skewX(-18deg);
+}
+.fx .is-in .fx-shine::before { animation: fxShine 1.6s ease calc(var(--delay, 0s) + .7s) 1 both; }
+@keyframes fxShine { to { transform: translateX(340%) skewX(-18deg); } }
+.fx-shine::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 238, 195, .38), transparent 55%); opacity: 0; transition: opacity .35s; }
+@media (hover: hover) and (pointer: fine) {
+  .fx .fx-card.fx-settled:hover > .fx-shine::before { animation: fxShine2 1.1s ease 1 both; }
+  .fx .fx-card.fx-settled:hover > .fx-shine::after { opacity: 1; }
+}
+@keyframes fxShine2 { from { transform: translateX(-130%) skewX(-18deg); } to { transform: translateX(340%) skewX(-18deg); } }
+
+/* ---- Footer ---- */
+.fx .footer.reveal .monogram--ring { transform: scale(.4) rotate(-90deg); opacity: 0; transition: transform 1.2s cubic-bezier(.3,1.5,.5,1), opacity .8s; }
+.fx .footer.reveal.is-in .monogram--ring { transform: none; opacity: 1; }
+.fx .footer.reveal { transform: none; }
+
+/* ---- Gold scroll-progress thread ---- */
+.fx-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 1100; transform-origin: 0 50%; transform: scaleX(0); pointer-events: none;
+  background: linear-gradient(90deg, #946B28, #E8C170, #B18A45); box-shadow: 0 0 8px rgba(197, 160, 89, .6); }
+body.is-locked .fx-progress { opacity: 0; }
+
+/* Phones: keep the effects but lighter */
+@media (max-width: 860px), (hover: none) {
+  .fx .fx-card.reveal, .fx .reveal .fx-card:not(.reveal) { transform: translateY(36px) scale(.97); }
+  .fx .sp { transform: translateY(.5em); }
+}

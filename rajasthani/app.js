@@ -148,23 +148,23 @@
 
   /* ---------- Video background loops & image fallbacks ---------- */
   const isReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!isReduced) {
-    document.querySelectorAll('video').forEach(vid => {
-      vid.muted = true;
-      vid.playsInline = true;
-      const markPlaying = () => vid.classList.add('is-playing');
-      vid.addEventListener('playing', markPlaying);
-      vid.addEventListener('canplay', markPlaying);
-      vid.addEventListener('error', () => {
-        vid.classList.remove('is-playing');
-        vid.style.display = 'none';
-      });
-      const p = vid.play();
-      if (p !== undefined) {
-        p.then(markPlaying).catch(() => {});
-      }
-    });
-  }
+  const saveData = !!(navigator.connection && navigator.connection.saveData);
+  // Videos only load/play while their section is on screen; missing files are removed.
+  const vidIO = new IntersectionObserver(es => es.forEach(e => {
+    const v = e.target;
+    if (e.isIntersecting) { const p = v.play(); if (p) p.catch(() => {}); } else v.pause();
+  }), { rootMargin: '200px 0px' });
+  document.querySelectorAll('video').forEach(vid => {
+    if (isReduced || saveData) { vid.remove(); return; }
+    vid.muted = true; vid.playsInline = true;
+    vid.removeAttribute('autoplay');
+    const drop = () => { vidIO.unobserve(vid); vid.remove(); };
+    vid.addEventListener('playing', () => vid.classList.add('is-playing'));
+    vid.addEventListener('error', drop);
+    const srcs = vid.querySelectorAll('source');
+    if (srcs.length) srcs[srcs.length - 1].addEventListener('error', drop); // every source failed
+    vidIO.observe(vid);
+  });
 
   document.querySelectorAll('.screen-bg img, .person-frame img, img.ganesha').forEach(img => {
     img.addEventListener('error', function() {
@@ -190,13 +190,15 @@
 
   /* ---------- Hero: zoom through the jharokha as you scroll ---------- */
   const heroBg = $('#heroBg'), heroContent = document.querySelector('.hero-content');
+  const lightMode = matchMedia('(max-width: 860px), (hover: none)').matches; // phones: skip the zoom
   let ticking = false;
   addEventListener('scroll', () => {
-    if (ticking) return; ticking = true;
+    if (ticking || scrollY > innerHeight * 1.2) return; // hero off screen: nothing to update
+    ticking = true;
     requestAnimationFrame(() => {
       const p = Math.min(1, scrollY / innerHeight);
       if (document.body.classList.contains('hero-in') && heroBg && heroContent) {
-        heroBg.style.transform = `scale(${1 + p * .35})`;
+        if (!lightMode) heroBg.style.transform = `scale(${1 + p * .35})`;
         heroContent.style.transform = `translateY(${p * -60}px)`;
         heroContent.style.opacity = 1 - p * 1.2;
       }
