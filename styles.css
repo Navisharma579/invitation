@@ -251,17 +251,19 @@ a { color: inherit; }
   object-position: center;
   display: block;
 }
-/* Warm golden radial glow over backgrounds instead of dark green */
+/* Backgrounds: clear, crisp & fully visible with no faded milky wash */
 .screen-bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(250, 244, 235, 0.22) 0%, rgba(245, 235, 215, 0.72) 100%);
+  background: none;
+  display: none;
   z-index: 1;
   pointer-events: none;
 }
 [data-theme="ruby"] .screen-bg::after {
-  background: radial-gradient(circle at center, rgba(255, 249, 233, 0.22) 0%, rgba(116, 31, 43, 0.35) 100%);
+  background: none;
+  display: none;
 }
 .screen-bg .screen-video {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;
@@ -290,7 +292,7 @@ a { color: inherit; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 50% 45%, rgba(255, 248, 235, 0.94) 0%, rgba(246, 235, 212, 0.90) 45%, rgba(55, 25, 20, 0.78) 85%, rgba(26, 12, 10, 0.96) 100%),
+    radial-gradient(ellipse at 50% 45%, rgba(255, 248, 235, 0.20) 0%, rgba(246, 235, 212, 0.35) 45%, rgba(55, 25, 20, 0.75) 85%, rgba(26, 12, 10, 0.95) 100%),
     url('assets/hero-landscape.jpg') center center / cover no-repeat;
   filter: saturate(1.15) brightness(0.98);
   transform: scale(1.04);
@@ -2307,11 +2309,11 @@ a { color: inherit; }
 .fx .w { display: inline-block; white-space: nowrap; }
 .fx .sp { display: inline-block; opacity: 0; transform: translateY(.55em) rotateX(-70deg); transform-origin: 50% 100%; }
 .fx .is-in .sp, .fx .footer.is-in .sp {
-  animation: fxLetter .8s cubic-bezier(.2,.8,.2,1) forwards, fxGlint 1.3s ease forwards;
-  animation-delay: calc(var(--d, 0s) + .2s), calc(var(--d, 0s) + .95s);
+  animation: fxLetter 1.2s cubic-bezier(.2,.8,.2,1) forwards, fxGlint 1.8s ease forwards;
+  animation-delay: calc(var(--d, 0s) + .3s), calc(var(--d, 0s) + 1.4s);
 }
 .fx .hero-in .hero-names .sp {
-  animation: fxLetter .9s cubic-bezier(.2,.8,.2,1) forwards, fxGlint 1.4s ease forwards;
+  animation: fxLetter 1.3s cubic-bezier(.2,.8,.2,1) forwards, fxGlint 1.9s ease forwards;
   animation-delay: calc(var(--d, 0s) + .9s), calc(var(--d, 0s) + 1.8s);
 }
 @keyframes fxLetter { to { opacity: 1; transform: none; } }
@@ -2320,7 +2322,7 @@ a { color: inherit; }
 /* ---- Script lines look hand-written ---- */
 .fx .reveal .eyebrow-script, .fx .hero .h-script {
   clip-path: inset(-30% 100% -30% -10%);
-  transition: clip-path 1.6s cubic-bezier(.6,.1,.3,1) .1s;
+  transition: clip-path 2.4s cubic-bezier(.6,.1,.3,1) .15s;
 }
 .fx .reveal.is-in .eyebrow-script, .fx .hero-in .hero .h-script { clip-path: inset(-30% -10% -30% -10%); }
 .fx .hero-in .hero .h-script { transition-delay: .5s; }
@@ -2332,7 +2334,7 @@ a { color: inherit; }
 .fx .reveal.is-in .divider b, .fx .reveal.is-in .card-p-divider b { opacity: 1; transform: none; }
 
 /* ---- Invitation card: each line appears in turn, names glow ---- */
-.fx .card.reveal .card-inner > * { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .8s cubic-bezier(.2,.8,.2,1); transition-delay: calc(.35s + var(--i, 0) * .09s); }
+.fx .card.reveal .card-inner > * { opacity: 0; transform: translateY(16px); transition: opacity 1.1s ease, transform 1.2s cubic-bezier(.2,.8,.2,1); transition-delay: calc(.5s + var(--i, 0) * .15s); }
 .fx .card.reveal.is-in .card-inner > * { opacity: 1; transform: none; }
 .fx .card.is-in .card-kalash { animation: fxKalash 1.2s cubic-bezier(.3,1.4,.5,1) .3s both; }
 @keyframes fxKalash { from { opacity: 0; transform: translateY(-20px) scale(.5) rotate(-12deg); } }
@@ -2357,7 +2359,7 @@ a { color: inherit; }
 @keyframes fxRingGlow { 50% { box-shadow: 0 0 0 6px rgba(197, 160, 89, .18), 0 0 34px rgba(197, 160, 89, .55); } }
 
 /* event rows slide in after their card */
-.fx .royal-event-card .rec-item { opacity: 0; transform: translateX(-18px); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.8,.2,1); transition-delay: calc(var(--delay, 0s) + .45s + var(--j, 0) * .12s); }
+.fx .royal-event-card .rec-item { opacity: 0; transform: translateX(-18px); transition: opacity .9s ease, transform 1.05s cubic-bezier(.2,.8,.2,1); transition-delay: calc(var(--delay, 0s) + .6s + var(--j, 0) * .18s); }
 .fx .royal-event-card.is-in .rec-item { opacity: 1; transform: none; }
 .fx .royal-event-card.is-in .rec-ico { animation: fxIco .9s cubic-bezier(.3,1.6,.5,1) both; animation-delay: calc(var(--delay, 0s) + .55s + var(--j, 0) * .12s); }
 @keyframes fxIco { from { transform: scale(0) rotate(-90deg); } }
@@ -2398,3 +2400,14 @@ body.is-locked .fx-progress { opacity: 0; }
   .fx .fx-card.reveal, .fx .reveal .fx-card:not(.reveal) { transform: translateY(36px) scale(.97); }
   .fx .sp { transform: translateY(.5em); }
 }
+
+/* Card-exact labels */
+.venue-label { color: var(--maroon); font-size: 1rem; margin: 0 0 4px; }
+.baraat-note { margin: 10px 0 4px; color: var(--maroon); font-size: .95rem; line-height: 1.7; }
+.c-en { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(177,138,69,.4); font-family: var(--f-body); font-size: .92rem; line-height: 1.6; }
+.c-en p { margin: 6px 0; }
+.c-en-name { font-family: var(--f-en); font-size: 1.15rem; letter-spacing: .06em; color: var(--maroon); }
+.c-en-sang { font-style: italic; }
+.venue-en, .gcard-en, .fam-en { font-family: var(--f-body); font-size: .9rem; line-height: 1.6; opacity: .9; margin: 8px 0; }
+.fam-en { font-style: italic; margin-top: -4px; }
+.auto-btn.is-off { opacity: .55; }

@@ -17,46 +17,47 @@
     agni: '<svg viewBox="0 0 32 32"><path d="M6 28l3-7h14l3 7z" fill="#B5592E" stroke="#6E2E16"/><path d="M16 4q6 7 4 12q2-1 2-4q3 5 0 9H10q-3-4 0-9q0 3 2 4q-2-6 4-12z" fill="#F5A623"/><path d="M16 11q3 4 2 8h-4q-1-4 2-8z" fill="#FFF0B8"/></svg>'
   };
 
+  /* Exactly as printed on the card — Hindi + English, nothing added */
   const EVENTS = [
     {
-      date: 'Monday, December 6, 2026',
-      hi: 'सोमवार, 6 दिसंबर 2026',
-      badge: 'प्रथम निमंत्रण',
+      hi: 'रविवार, 6 दिसम्बर, 2026', date: 'Sunday, 6 December 2026',
       highlight: false,
       items: [
-        ['GANESH NIMANTRAN', 'गणेश निमंत्रण', '6:00 AM', 'kalash', 'विघ्नहर्ता श्री गणेश जी को प्रथम निमंत्रण एवं मंगल पाठ']
+        ['गणेश निमंत्रण', 'Ganesh Nimantran', 'प्रातः 6:00 बजे', '6:00 AM', 'kalash']
       ]
     },
     {
-      date: 'Thursday, December 10, 2026',
-      hi: 'गुरुवार, 10 दिसंबर 2026',
-      badge: 'मांगलिक रस्में एवं प्रीतिभोज',
+      hi: 'गुरुवार, 10 दिसम्बर, 2026', date: 'Thursday, 10 December 2026',
       highlight: false,
       items: [
-        ['GODH', 'गोद', '11:00 AM', 'coconut', 'नारियल एवं शगुन भेंट की रस्म'],
-        ['LAGAN', 'लग्न', '12:15 PM', 'scroll', 'मांगलिक लग्न पत्रिका वाचन'],
-        ['BAAN SANKADI', 'बान सांकड़ी', '2:00 PM', 'haldi', 'हल्दी एवं उबटन की शुभ रस्म'],
-        ['PREETIBHOJ', 'प्रीतिभोज', '7:00 PM onwards', 'thali', 'स्नेहभोज (निवास स्थान पर)']
+        ['गोद', 'Godh', 'प्रातः 11:00 बजे', '11:00 AM', 'coconut'],
+        ['लग्न-टीका', 'Lagan-Tika', 'दोपहर 12:15 बजे', '12:15 PM', 'scroll'],
+        ['प्रीतिभोज', 'Preetibhoj', 'सायं 7:00 बजे से', '7:00 PM onwards', 'thali',
+          'प्रीतिभोज स्थल : "ॐ राधिका मैरिज गार्डन"<br>मार्बल मण्डी चौराहा, कालवाड़ रोड, जयपुर',
+          'Preetibhoj Venue: "Om Radhika Marriage Garden"<br>Marble Mandi Chauraha, Kalwar Road, Jaipur']
       ]
     },
     {
-      date: 'Sunday, December 13, 2026',
-      hi: 'रविवार, 13 दिसंबर 2026',
-      badge: 'संस्कार एवं चाक',
+      hi: 'शनिवार, 12 दिसम्बर, 2026', date: 'Saturday, 12 December 2026',
       highlight: false,
       items: [
-        ['JANEYU SANSKAR', 'जनेऊ संस्कार', '8:00 AM', 'thread', 'पवित्र यज्ञोपवीत संस्कार'],
-        ['CHAAK', 'चाक', '2:00 PM', 'pot', 'कुम्हार पूजन एवं मातृ वंदना']
+        ['बान सांकड़ी', 'Baan Sankadi', 'दोपहर 12:15 बजे', '12:15 PM', 'haldi']
       ]
     },
     {
-      date: 'Monday, December 14, 2026',
-      hi: 'सोमवार, 14 दिसंबर 2026',
-      badge: '✦ मुख्य वैवाहिक कार्यक्रम · Shubh Vivah ✦',
+      hi: 'रविवार, 13 दिसम्बर, 2026', date: 'Sunday, 13 December 2026',
+      highlight: false,
+      items: [
+        ['जनेऊ संस्कार', 'Janeu Sanskar', 'प्रातः 8:00 बजे', '8:00 AM', 'thread'],
+        ['चाक', 'Chaak', 'दोपहर 2:00 बजे', '2:00 PM', 'pot']
+      ]
+    },
+    {
+      hi: 'सोमवार, 14 दिसम्बर, 2026', date: 'Monday, 14 December 2026',
       highlight: true,
       items: [
-        ['BARAT NIKASI', 'बारात निकासी (निवास स्थान से)', '3:00 PM', 'dhol', 'श्री बालाजी बाग मैरिज गार्डन, नृसिंह विहार, जयपुर'],
-        ['PANIGRAHAN SANSKAR', 'पाणिग्रहण संस्कार', 'शुभलग्नानुसार', 'agni', 'ॐ राधिका मैरिज गार्डन, मार्बल मंडी चौराहा, कालवाड़ रोड, जयपुर']
+        ['बारात निकासी (निवास स्थान से)', 'Baraat Nikasi (from residence)', 'सायं 3:15 बजे', '3:15 PM', 'dhol'],
+        ['पाणिग्रहण संस्कार', 'Panigrahan Sanskar', 'शुभलग्नानुसार', 'As per auspicious muhurat', 'agni']
       ]
     }
   ];
@@ -67,21 +68,21 @@
       <article class="royal-event-card ${d.highlight ? 'royal-event-card--highlight' : ''} reveal">
         <div class="rec-arch-top">
           <span class="rec-ornament">❖</span>
-          <div class="rec-badge">${d.badge}</div>
           <h3 class="rec-date-hi deva">${d.hi}</h3>
           <p class="rec-date-en">${d.date}</p>
         </div>
         <div class="rec-body">
-          ${d.items.map(([en, hi, t, ic, desc]) => `
+          ${d.items.map(([hi, en, t, tEn, ic, desc, descEn]) => `
             <div class="rec-item">
               <div class="rec-ico" aria-hidden="true">${I[ic] || ''}</div>
               <div class="rec-details">
                 <div class="rec-head-row">
                   <span class="rec-hi tiro">${hi}</span>
-                  <span class="rec-time ${/[ऀ-ॿ]/.test(t) ? 'deva' : ''}">⏰ ${t}</span>
+                  <span class="rec-time deva">${t}</span>
                 </div>
-                <div class="rec-en">${en}</div>
+                <div class="rec-en">${en} · ${tEn}</div>
                 ${desc ? `<p class="rec-desc deva">${desc}</p>` : ''}
+                ${descEn ? `<p class="rec-desc">${descEn}</p>` : ''}
               </div>
             </div>
           `).join('')}
@@ -92,17 +93,17 @@
 
   /* ---------- Family & relatives ---------- */
   const FAMILY = [
-    { title: 'उत्तराकांक्षी', names: [] },
-    { title: 'बुआ-फूफा पक्ष', names: [] },
-    { title: 'दर्शनीयाभिलाषी', names: [] },
-    { title: 'ननिहाल पक्ष', names: [] },
-    { title: 'जंवाई पक्ष', names: [] },
-    { title: 'बाल मनुहार', names: [] }
+    { title: 'उत्तराकांक्षी', en: 'Uttarakankshi', names: ['पं. बाबूलाल मिश्र', 'पं. मनोहर लाल मिश्र'] },
+    { title: 'बुआ-फूफा पक्ष', en: 'Bua-Fufa Paksh', names: ['कमला देवी-स्व. नवलकिशोर जी', 'मनभरी देवी-स्व. रामकिशोर जी', 'पतासी देवी-रामचन्द्र जी', 'शारदा देवी-सुरेन्द्र जी', 'सन्तोष देवी-रणजीत जी', 'रेखा देवी-राधेश्याम जी', 'विजय देवी-रघुनन्दन जी', 'निशा देवी-दीपक जी'] },
+    { title: 'दर्शनाभिलाषी', en: 'Darshanabhilashi', names: ['कजोड़मल, हनुमानसहाय', 'योगेश, मुकेश, हेमन्त', 'मामराज, विनोद, नरेश', 'मनीष, अनिल, विजेन्द्र', 'दीपक, गजानन्द, राहुल', 'मोहित, आशीष, पंकज', 'हिमांशु, ध्रुव, निखिल', 'एवं समस्त बिंवाल परिवार'] },
+    { title: 'ननिहाल पक्ष', en: 'Nanihal Paksh', names: ['स्व. गिर्राज प्रसाद जी-सरूपी देवी', 'गिरधारी जी-संतोष देवी', 'बनवारी जी-सरिता', 'स्व. मनसुख जी-हेमलता', 'जितेन्द्र-गरिमा', 'रवि-प्रियंका, गौरव-मोनिका', 'नीरज, विशाल, माधव'] },
+    { title: 'जंवाई पक्ष', en: 'Jawai Paksh', names: ['मनीषा-संजय जी', 'नेहा-नितिन जी', 'भावना-अंकित जी', 'गुंजन-अनुभव जी', 'पूजा, शालू'] },
+    { title: 'बाल मनुहार', en: 'Baal Manuhar', names: ['रूद्राक्ष, शान्तनु, मुकुन्द, ईशान्त, युवराज, काव्यांश, राम, पिहू'] }
   ];
   const familyGrid = $('#familyGrid');
   if (familyGrid) {
     familyGrid.innerHTML = FAMILY.map(c => `
-      <article class="fam reveal"><h3>${c.title}</h3>
+      <article class="fam reveal"><h3>${c.title}</h3><p class="fam-en">${c.en}</p>
         ${c.names.length ? `<ul>${c.names.map(n => `<li>${n}</li>`).join('')}</ul>` : '<p class="pending">नाम शीघ्र जोड़े जाएँगे · Names to be added from the printed card</p>'}
       </article>`).join('');
   }
@@ -120,7 +121,70 @@
     setTimeout(() => { intro.classList.add('is-gone'); document.body.classList.remove('is-locked'); document.body.classList.add('hero-in'); }, 2300);
     setTimeout(() => intro.remove(), 3500);
     setTimeout(() => { const hbg = $('#heroBg'); if (hbg) hbg.style.transition = 'transform .15s linear'; }, 5000);
+    setTimeout(() => AutoScroll.start(), 2500);
   }
+
+  /* ---------- Page-wise auto scroll: shows one page, glides to the next ----------
+   * Pauses when the guest touches/scrolls, resumes after a few idle seconds. */
+  const AutoScroll = (() => {
+    const DWELL = 4000;        // how long each page stays on screen (ms)
+    const GLIDE = 1100;        // how long the glide to the next page takes (ms)
+    const IDLE_RESUME = 4000;  // resume this long after the guest stops interacting
+    const btn = $('#autoBtn');
+    let enabled = true, waitT = 0, idleT = 0, raf = 0, gliding = false;
+    const maxY = () => document.documentElement.scrollHeight - innerHeight;
+    const ui = () => {
+      if (!btn) return;
+      btn.textContent = enabled ? '⏬' : '⏸';
+      btn.classList.toggle('is-off', !enabled);
+      btn.setAttribute('aria-pressed', String(enabled));
+      btn.setAttribute('aria-label', enabled ? 'Pause auto scroll' : 'Start auto scroll');
+    };
+    // Page stops: the top of every section, plus extra screen-sized steps inside tall sections
+    function stops() {
+      const out = [];
+      document.querySelectorAll('main > section, main > footer').forEach(s => {
+        const top = s.getBoundingClientRect().top + scrollY, h = s.offsetHeight;
+        out.push(top);
+        for (let y = top + innerHeight * 0.85; y < top + h - innerHeight * 0.6; y += innerHeight * 0.85) out.push(y);
+      });
+      return out.map(y => Math.min(Math.round(y), maxY())).sort((a, b) => a - b);
+    }
+    const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    function glideTo(target) {
+      const from = scrollY, dist = target - from, t0 = performance.now();
+      gliding = true;
+      const step = now => {
+        if (!gliding) return;
+        const p = Math.min(1, (now - t0) / GLIDE);
+        window.scrollTo({ top: from + dist * ease(p), behavior: 'instant' });
+        if (p < 1) raf = requestAnimationFrame(step);
+        else { gliding = false; schedule(); }
+      };
+      raf = requestAnimationFrame(step);
+    }
+    function next() {
+      if (!enabled || document.body.classList.contains('is-locked')) return;
+      const target = stops().find(y => y > scrollY + 20);
+      if (target == null) return;           // reached the end
+      glideTo(target);
+    }
+    function schedule(delay = DWELL) { clearTimeout(waitT); if (enabled) waitT = setTimeout(next, delay); }
+    function stop() { clearTimeout(waitT); gliding = false; cancelAnimationFrame(raf); }
+    function interrupt() {
+      stop(); clearTimeout(idleT);
+      if (enabled) idleT = setTimeout(() => schedule(0), IDLE_RESUME);
+    }
+    ['wheel', 'touchstart', 'pointerdown', 'keydown'].forEach(ev =>
+      addEventListener(ev, e => { if (btn && e.target instanceof Node && btn.contains(e.target)) return; interrupt(); }, { passive: true }));
+    document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else if (enabled) interrupt(); });
+    if (btn) btn.addEventListener('click', () => {
+      enabled = !enabled; ui(); clearTimeout(idleT);
+      enabled ? schedule(600) : stop();
+    });
+    ui();
+    return { start: () => schedule() };
+  })();
   const openBtn = $('#openBtn'), sealBtn = $('#seal'), envBox = $('#envelope');
   if (openBtn) openBtn.addEventListener('click', openInvite);
   if (sealBtn) sealBtn.addEventListener('click', (e) => { e.stopPropagation(); openInvite(); });
@@ -146,26 +210,7 @@
   if (muteBtn) muteBtn.addEventListener('click', () => { Shehnai.setMuted(!Shehnai.muted); setMusicUI(); });
   document.addEventListener('visibilitychange', () => { if (document.hidden && Shehnai.playing) { Shehnai.pause(); setMusicUI(); } });
 
-  /* ---------- Video background loops & image fallbacks ---------- */
-  const isReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const saveData = !!(navigator.connection && navigator.connection.saveData);
-  // Videos only load/play while their section is on screen; missing files are removed.
-  const vidIO = new IntersectionObserver(es => es.forEach(e => {
-    const v = e.target;
-    if (e.isIntersecting) { const p = v.play(); if (p) p.catch(() => {}); } else v.pause();
-  }), { rootMargin: '200px 0px' });
-  document.querySelectorAll('video').forEach(vid => {
-    if (isReduced || saveData) { vid.remove(); return; }
-    vid.muted = true; vid.playsInline = true;
-    vid.removeAttribute('autoplay');
-    const drop = () => { vidIO.unobserve(vid); vid.remove(); };
-    vid.addEventListener('playing', () => vid.classList.add('is-playing'));
-    vid.addEventListener('error', drop);
-    const srcs = vid.querySelectorAll('source');
-    if (srcs.length) srcs[srcs.length - 1].addEventListener('error', drop); // every source failed
-    vidIO.observe(vid);
-  });
-
+  /* ---------- Image fallbacks ---------- */
   document.querySelectorAll('.screen-bg img, .person-frame img, img.ganesha').forEach(img => {
     img.addEventListener('error', function() {
       const pic = this.closest('picture');

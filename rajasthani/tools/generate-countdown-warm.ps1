@@ -8,11 +8,7 @@ $g.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQuality
 
 $g.DrawImage($src, 0, 0, 1920, 1080)
 
-# Soft semi-transparent warm ivory/gold gradient over the upper two-thirds
-$gradRect = New-Object System.Drawing.Rectangle(0, 0, 1920, 720)
-$grad = New-Object System.Drawing.Drawing2D.LinearGradientBrush($gradRect, [System.Drawing.Color]::FromArgb(220, 250, 244, 235), [System.Drawing.Color]::FromArgb(0, 250, 244, 235), [System.Drawing.Drawing2D.LinearGradientMode]::Vertical)
-$g.FillRectangle($grad, $gradRect)
-$grad.Dispose()
+# Clear crisp background with full visibility (gradient overlay removed)
 
 $codec = [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() | Where-Object { $_.MimeType -eq "image/jpeg" }
 $ep = New-Object System.Drawing.Imaging.EncoderParameters(1)
@@ -31,10 +27,7 @@ $gp.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualit
 
 $gp.DrawImage($portSrc, 0, 0, 1080, 1920)
 
-$gradRectP = New-Object System.Drawing.Rectangle(0, 0, 1080, 1200)
-$gradP = New-Object System.Drawing.Drawing2D.LinearGradientBrush($gradRectP, [System.Drawing.Color]::FromArgb(220, 250, 244, 235), [System.Drawing.Color]::FromArgb(0, 250, 244, 235), [System.Drawing.Drawing2D.LinearGradientMode]::Vertical)
-$gp.FillRectangle($gradP, $gradRectP)
-$gradP.Dispose()
+# Clear crisp background with full visibility (gradient overlay removed)
 
 $portBmp.Save("rajasthani\assets\countdown-portrait.jpg", $codec, $ep)
 $gp.Dispose()

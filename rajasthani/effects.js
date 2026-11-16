@@ -40,8 +40,8 @@
   // Only split text that will later receive a trigger class (.is-in from a reveal, or the hero)
   const canTrigger = el => el.closest('.reveal') || el.closest('.hero');
   document.querySelectorAll('.sec-head h2, .hero-names, .ganesh-title, .c-name, .person h3, .venue-name, .c-band, .foot-names')
-    .forEach(el => { if (canTrigger(el) || el.closest('.footer')) split(el, el.classList.contains('hero-names') ? 0.045 : 0.032); });
-  document.querySelectorAll('.shloka').forEach(el => canTrigger(el) && split(el, 0.035));
+    .forEach(el => { if (canTrigger(el) || el.closest('.footer')) split(el, el.classList.contains('hero-names') ? 0.065 : 0.05); });
+  document.querySelectorAll('.shloka').forEach(el => canTrigger(el) && split(el, 0.055));
 
   /* ---------- 2. Invitation card: lines appear one after another ---------- */
   document.querySelectorAll('.card-inner > *').forEach((el, i) => el.style.setProperty('--i', i));
@@ -64,7 +64,7 @@
   const settle = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return;
     const c = e.target, d = parseFloat(getComputedStyle(c).getPropertyValue('--delay')) || 0;
-    setTimeout(() => c.classList.add('fx-settled'), (d + 1.6) * 1000);
+    setTimeout(() => c.classList.add('fx-settled'), (d + 2.2) * 1000);
     settle.unobserve(c);
   }), { threshold: 0.15 });
   cards.forEach(c => settle.observe(c));
